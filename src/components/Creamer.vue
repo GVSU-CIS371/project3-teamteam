@@ -1,10 +1,22 @@
 <template>
+    <!-- we add :style="customStyle" to say we want the :style to be updated, and customStyle is our function
+     that calls the computed() funciton from vue. computed must return an object. which in our case:
+     this object is unpacked to see that the backgroundColor is being set to what the currentBase's color is. -->
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+    <div v-for=" in 5" class="foam" :style="applyStyle"></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {currentCreamer} from '../stores/beverage';
+import {computed} from 'vue';
+const applyStyle = computed(() => {
+    return {
+        backgroundColor: currentCreamer.value.color
+    };
+})
+
+</script>
 <style lang="scss" scoped>
 .froth {
   overflow: visible;
