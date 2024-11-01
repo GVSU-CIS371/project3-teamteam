@@ -84,8 +84,17 @@ const syrups: Ref<SyrupType[]> = ref([
   },
 ]);
 
+
+// Set default temperature to be Cold.
 const currentTemp = ref(temps.value[1]);
+// set default base value to be 'Green Tea'
+const currentBase = ref(bases.value[1]);
+// set default cream value to be 'Half & Half'
+const currentCreamer = ref(creamers.value[3]);
+// set default Syrup value to be 'Hazelnut'
+const currentSyrup = ref(syrups.value[3]);
+
 
 export type { BaseBeverageType, CreamerType, SyrupType };
 export { temps, bases, creamers, syrups };
-export { currentTemp };
+export { currentTemp, currentCreamer, currentBase, currentSyrup };
