@@ -1,4 +1,7 @@
 <template>
+    <!-- we add :style="customStyle" to say we want the :style to be updated, and customStyle is our function
+     that calls the computed() funciton from vue. computed must return an object. which in our case:
+     this object is unpacked to see that the backgroundColor is being set to what the currentBase's color is. -->
   <div class="baseBeverage" :style="customStyle">
     
   </div>
