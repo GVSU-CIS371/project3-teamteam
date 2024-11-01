@@ -5,6 +5,8 @@
       <li>
         <template v-for="temp in temps" :key="temp">
           <label>
+            <!-- v-model="currentTemp is to do 2 way binding I believe.
+             the v-model="currentTemp" will set the default value of this radioButton to the value of currentTemp." -->
             <input
               type="radio"
               name="temperature"
