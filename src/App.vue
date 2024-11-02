@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Beverage :isIced="currentTemp === 'Cold'" :hasSyrup="currentSyrup.id != 's1'"/>
+    <!-- pass a boolean prop that is true if the current selection is a syrup option, meaning the mug has syrup. False if the current selection 
+     does NOT have syrup. Do the same thing for hasCreamer -->
+    <Beverage :isIced="currentTemp === 'Cold'" :hasSyrup="currentSyrup.id != 's1'" :hasCreamer="currentCreamer.id != 'c1'"/>
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">

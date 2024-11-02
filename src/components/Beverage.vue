@@ -4,10 +4,14 @@
     <Hot v-else />
     <Contents>
       <template v-slot:top>
-        <Creamer />
+        <!-- if the hasCreamer variable is true, then we have a creamer option selected for this beverage, so we should render it.
+         Otherwise, if no creamer is selected then we can ignore it and have the base fill up the mug up to the point of the creamer. -->
+        <Creamer v-if="hasCreamer"/>
       </template>
       <template v-slot:mid>
-        <Syrup v-if="hasSyrup" />
+        <!-- if the hasSyrup variable is true, then we have a syrup option selected for this beverage, so we should render it.
+         Otherwise, if no syrup is selected then we can ignore it and have the base fill up the mug up to the point of the syrup. -->
+         <Syrup v-if="hasSyrup" />
       </template>
       <template v-slot:bottom>
         <Base />
@@ -27,7 +31,12 @@ import Cold from "./Cold.vue";
 
 type Props = {
   isIced: boolean;
-  hasSyrup: boolean;
+//   added expected prop hasSyrup to be used by this component (beverage) in order to determine if syrup sub-component for this component (beverage) should be
+// rendered or not 
+hasSyrup: boolean;
+//   added expected prop hasCreamer to be used by this component (beverage) in order to determine if creamer sub-component for this component (beverage) should be
+// rendered or not 
+  hasCreamer: boolean
 };
 defineProps<Props>();
 </script>

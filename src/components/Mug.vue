@@ -1,6 +1,6 @@
 <template>
   <div class="mug">
-    <slot />
+    <slot></slot>
   </div>
 </template>
 <script setup lang="ts"></script>
