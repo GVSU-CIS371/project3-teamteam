@@ -39,4 +39,5 @@ hasSyrup: boolean;
   hasCreamer: boolean
 };
 defineProps<Props>();
+// 
 </script>
