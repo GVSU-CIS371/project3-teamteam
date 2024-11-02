@@ -2,28 +2,18 @@
   <Mug>
     <Cold v-if="isIced" />
     <Hot v-else />
-    <Contents v-if="hasSyrup">
+    <Contents>
       <template v-slot:top>
         <Creamer />
       </template>
       <template v-slot:mid>
-        <Syrup />
+        <Syrup v-if="hasSyrup" />
       </template>
       <template v-slot:bottom>
         <Base />
       </template>
     </Contents>
-    <Contents v-else>
-      <template v-slot:top>
-        <None />
-      </template>
-      <template v-slot:mid>
-        <Creamer />
-      </template>
-      <template v-slot:bottom>
-        <Base />
-      </template>
-    </Contents>
+
   </Mug>
 </template>
 <script setup lang="ts">
