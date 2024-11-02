@@ -2,12 +2,23 @@
   <Mug>
     <Cold v-if="isIced" />
     <Hot v-else />
-    <Contents>
+    <Contents v-if="hasSyrup">
       <template v-slot:top>
         <Creamer />
       </template>
       <template v-slot:mid>
         <Syrup />
+      </template>
+      <template v-slot:bottom>
+        <Base />
+      </template>
+    </Contents>
+    <Contents v-else>
+      <template v-slot:top>
+        <None />
+      </template>
+      <template v-slot:mid>
+        <Creamer />
       </template>
       <template v-slot:bottom>
         <Base />
@@ -26,6 +37,7 @@ import Cold from "./Cold.vue";
 
 type Props = {
   isIced: boolean;
+  hasSyrup: boolean;
 };
 defineProps<Props>();
 </script>

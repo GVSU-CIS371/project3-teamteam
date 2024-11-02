@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Beverage :isIced="currentTemp === 'Cold'"/>
+    <Beverage :isIced="currentTemp === 'Cold'" :hasSyrup="currentSyrup.id != 's1'"/>
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">
